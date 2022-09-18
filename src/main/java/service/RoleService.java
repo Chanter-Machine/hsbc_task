@@ -16,6 +16,11 @@ public class RoleService {
         return roles.contains(role);
     }
 
+    /***
+     * 添加一个新的角色
+     * @param role 角色名称
+     * @throws Exception
+     */
     public static void addRole(String role) throws Exception {
         if(StringUtil.isBlank(role)) {
             throw new Exception("role should not be empty");
@@ -25,6 +30,11 @@ public class RoleService {
         }
     }
 
+    /***
+     * 删除一个role
+     * @param role 角色名称
+     * @throws Exception
+     */
     public static void deleteRole(String role) throws Exception {
         if(StringUtil.isBlank(role)) {
             throw new Exception("role should not be empty string");

@@ -17,12 +17,10 @@ public class UserService {
 
 
     /***
-     * Create a new User with username and pwd
-     *
-     * @param name User name
-     * @param password User password
-     * @return :
-     * @throws IOException
+     * 添加一个用户
+     * @param name 用户名
+     * @param password 用户密码
+     * @throws Exception
      */
     public static void createUser(String name, String password) throws Exception {
         // check user name
@@ -53,9 +51,9 @@ public class UserService {
 
 
     /***
-     * Delete suer
-     *
-     * @param name User name
+     * 删除一个用户
+     * @param name 用户名
+     * @return : 生成的token
      * @throws Exception
      */
     public static void deleteUser(String name) throws Exception {

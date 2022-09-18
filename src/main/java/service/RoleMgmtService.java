@@ -7,6 +7,13 @@ import java.util.HashSet;
 
 public class RoleMgmtService {
 
+    /***
+     * 给用户授权
+     * @param userName 用户名
+     * @param role 用户角色
+     * @return : 生成的token
+     * @throws Exception
+     */
     public static void addRoleToUser(String userName, String role) throws Exception {
 
         if(StringUtil.isBlank(userName) || StringUtil.isBlank(role)) {
@@ -33,6 +40,12 @@ public class RoleMgmtService {
         }
     }
 
+    /***
+     * 校验用户角色
+     * @param : 生成的token
+     * @param : role
+     * @return: true 匹配
+     */
     public static boolean checkUserRole(String token, String role) {
         if( StringUtil.isBlank(token) || StringUtil.isBlank(role)) {
             return false;
@@ -51,6 +64,12 @@ public class RoleMgmtService {
         return roleSet != null && !roleSet.isEmpty() && roleSet.contains(role);
     }
 
+    /***
+     * 删除一个用户
+     * @param token 令牌
+     * @return : 角色列表
+     * @throws Exception
+     */
     public static HashSet<String>getAllRoles(String token) throws Exception {
         if( StringUtil.isBlank(token)) {
             throw new Exception("invalid token format");

@@ -91,6 +91,11 @@ public class AuthService {
         return auth.getToken();
     }
 
+    /***
+     * 失效一个用户
+     * @param token
+     * @throws  : exception
+     */
     public static void invalidToken(String token) throws Exception {
         if(StringUtil.isBlank(token)) {
             throw new Exception("token should not be empty");
